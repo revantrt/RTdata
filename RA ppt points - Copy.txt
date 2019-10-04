@@ -1,0 +1,7 @@
+Register allocation by Graph coloration::
+
+When formulated as a coloring problem,each jode in the graph represents the live range of a aperticular value. A live range is defined as a write to a register followed by all the uses of registers untill the next write.
+An edge between two nodes indicates that two live ranges interfere with each other because their lifetimes overlap. In other words,they are both simultaneously active at some point on time, so they must be assigned to different registers.
+The resulting graph is thus called an interference graph.
+
+The vertex that is already colored is selected and linked by edges of same color with all other vertices of sets in which the vertex is located. These vertices can no longer be colored with the same color. This is repeated for all the vertices for which hints are given.
